@@ -31,3 +31,19 @@ Migrating to CreateNotes (20210617004559)
   ↳ bin/rails:9
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2863930903847733720)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateParentChild (20210617005320)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "parent_children" ("id" bigserial primary key, "parent_note_id" integer NOT NULL, "child_note_id" integer NOT NULL)[0m
+  ↳ db/migrate/20210617005320_create_parent_child.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210617005320"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateSiblings (20210617011911)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2863930903847733720)[0m
+  ↳ bin/rails:9
