@@ -12,14 +12,16 @@ class User < ApplicationRecord
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
     if @user.nil || @user.is_password(password) == false
+      #error handling in here
       
     else
-
+      @user
     end
   end
 
   def password=(password)
-    @password_digest = BCrypt::Password.create(password)
+    # @password = password
+    self.password_digest = BCrypt::Password.create(password)
   end
 
   def check_password(password)
