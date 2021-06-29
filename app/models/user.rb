@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
 
   def password=(password)
-    @password_digest = BCrypy.new(password)
+    @password_digest = BCrypt::Password.create(password)
   end
 
 end
