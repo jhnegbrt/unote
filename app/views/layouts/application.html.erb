@@ -14,8 +14,13 @@
     <header>
       <h1>This is our header</h1>
       <% if current_user %>
-      <a href="<%=">
+      <form action="<%=session_url%>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Sign Out">
+      </form>
+      <% else %>
       <a href="<%=new_user_url%>">Sign Up!</a>
+      <% end %>
     </header>
 
     <%= yield %>
