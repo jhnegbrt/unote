@@ -2140,3 +2140,11 @@ Processing by UsersController#create as HTML
   [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
   Parameters: {"authenticity_token"=>"tmNLzvL1ZsmMaCFXwZ5RjZgy1n7BHDrbfSVt8K1KC88M6tFYSFQ7tbaL/rPvNlYkedjvilrevRPW2m/1oKx19g==", "user"=>{"username"=>"window", "password"=>"[FILTERED]"}, "password_confirmation"=>"[FILTERED]"}
   ↳ (byebug):1
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 166239ms (ActiveRecord: 41.1ms)
+
+
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 2288905ms (ActiveRecord: 0.0ms)
+
+
