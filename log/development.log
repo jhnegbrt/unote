@@ -1044,3 +1044,24 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 154ms (Views: 146.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2021-06-29 17:39:49 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-29 17:39:51 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 44ms (Views: 22.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-29 17:40:26 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 90ms (Views: 88.1ms | ActiveRecord: 0.0ms)
+
+
