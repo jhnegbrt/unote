@@ -6,18 +6,20 @@ class UsersController < ApplicationController
   end
 
   def create
+    debugger
+    if password_confirmation == user_params[:password]
+      user = User.new(user_params)
+      if user.save!
+        login(user)
+        render :show
+      else
 
-    params = user_params
-    if params[:password] != params[:password_confirmation]
-      
+      end
     else
 
     end
-    debugger
 
-    @user = User.new(user_params)
 
-    debugger
     
   end
 
@@ -28,6 +30,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :password, :password_confirmation)
+  end
+
+  def password_confirmation
+    params.require(:password_confirmation)
   end
 
 end
