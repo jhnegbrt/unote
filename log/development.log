@@ -1817,3 +1817,54 @@ Completed 200 OK in 131ms (Views: 64.8ms | ActiveRecord: 19.1ms)
 Started POST "/users" for ::1 at 2021-06-29 18:01:39 -0700
 Processing by UsersController#create as HTML
   Parameters: {"authenticity_token"=>"8tofl7YuOcvdzaRJPEPYTm62TX4M0QljY7NYXoHe1UpIU4UBDI9kt+cue60S69/nj1x0ipcTjqvITFpbjDircw=="}
+Started GET "/" for ::1 at 2021-06-30 09:55:41 -0700
+Processing by NotesController#index as HTML
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 57242937ms (ActiveRecord: 0.0ms)
+
+
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 09:55:44 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 26.9ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 09:55:49 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"f1cj3ifLypzLfNwt+vo8amaMIh9wDIaaOvukUybp8Y3F3rlInWqX4PGfA8nUUjvDh2Yb6+vOAVKRBKZWKw+PtA=="}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 158343ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 09:58:34 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"f1cj3ifLypzLfNwt+vo8amaMIh9wDIaaOvukUybp8Y3F3rlInWqX4PGfA8nUUjvDh2Yb6+vOAVKRBKZWKw+PtA=="}
+Started GET "/" for ::1 at 2021-06-30 09:58:58 -0700
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 23561ms (ActiveRecord: 0.0ms)
+
+
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 45ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 09:59:00 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 09:59:07 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"sl58R65hnNGyJJ9hZzuftAfz/hO8SG3/JqJTetx9CGkI1+bRFMDBrYjHQIVJk5gd5hnH5yeK6jeNXVF/0Zt2UA==", "user"=>{"username"=>"john", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+Unpermitted parameters: :authenticity_token, :user
+Unpermitted parameter: :password
