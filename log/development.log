@@ -1868,3 +1868,45 @@ Processing by UsersController#create as HTML
   Parameters: {"authenticity_token"=>"sl58R65hnNGyJJ9hZzuftAfz/hO8SG3/JqJTetx9CGkI1+bRFMDBrYjHQIVJk5gd5hnH5yeK6jeNXVF/0Zt2UA==", "user"=>{"username"=>"john", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
 Unpermitted parameters: :authenticity_token, :user
 Unpermitted parameter: :password
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 352623ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-30 10:05:06 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 10:05:08 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 44ms (Views: 21.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 10:05:49 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 85ms (Views: 83.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-30 10:05:54 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 10:05:56 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 10:06:03 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"7gMGR5eQft/f+JeEvXOtswfhJSGvBEI0Y4dgOduggL9UipzRLTEjo+UbSGCT26oa5gsc1TTGxfzIeGI81kb+hg==", "user"=>{"username"=>"john", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}

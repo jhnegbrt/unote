@@ -7,7 +7,16 @@ class UsersController < ApplicationController
 
   def create
 
-    @user = User.create(user_params)
+    params = user_params
+    if params[:password] != params[:password_confirmation]
+      
+    else
+
+    end
+    debugger
+
+    @user = User.new(user_params)
+
     debugger
     
   end

@@ -1,13 +1,13 @@
 <form action="<%=users_url%>" method="POST">
   <%= authenticity_helper %>
   <label for="username">Username:</label>
-  <input name="user[username]" type="text" value="">
+  <input name="user[username]" type="text" value="<%=@user.username%>">
   <br>
   <label for="password">Password:</label>
   <input name="user[password]" type="password" value="">
   <br>
   <label for="password">Confirm Password:</label>
-  <input name="user[password_confirmation]" value="">
+  <input name="user[password_confirmation]" type="password" value="">
   <br>
   <input type="submit" value="Sign Up!">
 </form>
