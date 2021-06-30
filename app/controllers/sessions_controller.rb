@@ -7,5 +7,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    logout!
+    render :new
   end
 end

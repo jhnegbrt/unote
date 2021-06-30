@@ -15,6 +15,7 @@
       <h1>This is our header</h1>
       <% if current_user %>
       <form action="<%=session_url%>" method="POST">
+        <%= authenticity_helper %>
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Sign Out">
       </form>
