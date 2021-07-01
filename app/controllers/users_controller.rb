@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     debugger
     if password_confirmation[:password_confirmation] == user_params[:password]
       @user = User.new(user_params)
-      if @user.save!
+      if @user.save
         login!(@user)
         render :show
       else

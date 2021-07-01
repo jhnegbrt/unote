@@ -3108,3 +3108,99 @@ Processing by SessionsController#destroy as HTML
 Completed 200 OK in 39ms (Views: 25.8ms | ActiveRecord: 3.1ms)
 
 
+Started GET "/" for ::1 at 2021-06-30 19:54:24 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 54ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 19:54:27 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 11.7ms)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_errors with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/jhnegbrt/appacademy/unote/app/views"
+):
+    10:   <input name="password[password_confirmation]" type="password" value="">
+    11:   <br>
+    12:   <input type="submit" value="Sign Up!">
+    13:   <%= render 'shared/errors' %>
+    14: </form>
+  
+app/views/users/new.html.erb:13:in `_app_views_users_new_html_erb___3739824508062886544_70096049119980'
+app/controllers/users_controller.rb:5:in `new'
+Started GET "/" for ::1 at 2021-06-30 19:54:57 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 81ms (Views: 78.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 19:54:59 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (4.5ms)
+  Rendered users/new.html.erb within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/jhnegbrt/appacademy/unote/app/views/shared/_errors.html.erb:8: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/home/jhnegbrt/appacademy/unote/app/views/shared/_errors.html.erb:10: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/shared/_errors.html.erb:8: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/shared/_errors.html.erb:10: syntax error, unexpected end-of-input, expecting keyword_end
+app/views/users/new.html.erb:13:in `_app_views_users_new_html_erb___3739824508062886544_47123703522760'
+app/controllers/users_controller.rb:5:in `new'
+Started GET "/users/new" for ::1 at 2021-06-30 19:55:51 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (2.0ms)
+  Rendered users/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 99ms (Views: 95.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 19:56:04 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"jQMwbTbSpIib3IZQdieK25Oe5G2JPtVf7cOE1TI+FTU3iqr7jHP59KE/WbRYj41ycnTdmRL8UpdGPIbQP9hrDA==", "user"=>{"username"=>"jack", "password"=>"[FILTERED]"}, "password"=>"[FILTERED]"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jack"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ARpmmylQJ0-2LcA0DUAXfw"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 422 Unprocessable Entity in 6756ms (ActiveRecord: 4.7ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Username has already been taken):
+  
+app/controllers/users_controller.rb:12:in `create'
+Started POST "/users" for ::1 at 2021-06-30 19:56:35 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"jQMwbTbSpIib3IZQdieK25Oe5G2JPtVf7cOE1TI+FTU3iqr7jHP59KE/WbRYj41ycnTdmRL8UpdGPIbQP9hrDA==", "user"=>{"username"=>"jack", "password"=>"[FILTERED]"}, "password"=>"[FILTERED]"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jack"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fMcVotAXZCU0cJG3T45B6A"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.6ms)
+  Rendered users/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 5387ms (Views: 47.4ms | ActiveRecord: 9.6ms)
+
+
