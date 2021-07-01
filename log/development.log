@@ -2803,3 +2803,308 @@ Processing by SessionsController#destroy as HTML
 Completed 200 OK in 78ms (Views: 41.2ms | ActiveRecord: 20.3ms)
 
 
+Started POST "/session" for ::1 at 2021-06-30 17:58:18 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"m3kPW+dkoTPICokc2UqgFrc+FiurHD1c9//eOQol6t3bWN+x/xWXXNSR1ISwgWBwZ4ljYEdTZ3xLEKTCwSQfKg==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 24ms (ActiveRecord: 3.1ms)
+
+
+Started POST "/session" for ::1 at 2021-06-30 17:58:23 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"m3kPW+dkoTPICokc2UqgFrc+FiurHD1c9//eOQol6t3bWN+x/xWXXNSR1ISwgWBwZ4ljYEdTZ3xLEKTCwSQfKg==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 20ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-06-30 17:58:32 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 67ms (Views: 62.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 17:58:36 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 45ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 17:58:37 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"kfx0nrWk6ExFUG4tyMGPp9WzwI3EeM3qKtSAhUKUOSfR3aR0rdXeI1nLM7WhCk/BBQS1xig3l8qWO/p+iZXM0A==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}, "password_confirmation"=>"[FILTERED]"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: password_confirmation):
+  
+app/controllers/users_controller.rb:35:in `password_confirmation'
+app/controllers/users_controller.rb:9:in `create'
+Started GET "/" for ::1 at 2021-06-30 17:59:45 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 17:59:47 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 17:59:54 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"g5S8R29Rr6B1tNlIVy5zDj928saAhFiNmoSmNfr3kXLDtWytdyCZz2kvhNA+5bNo78GHjWzLAq0ma9zOMfZkhQ==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}, "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "F9crZfMAaP7YMzbCK-GukQ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:11
+Completed 422 Unprocessable Entity in 245ms (ActiveRecord: 3.2ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Username can't be blank):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started GET "/users/new" for ::1 at 2021-06-30 18:02:03 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 18:03:11 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 115ms (Views: 64.6ms | ActiveRecord: 16.0ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 18:03:15 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"7cetUJk2DiONMqxeHfChMyc0DcwqHW/Z8RcD/Ql5gVGt5n26gUc4TJGp8cZ0O2FV94N4h8ZSNflN+HkGwnh0pg==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}, "password_confirmation"=>"[FILTERED]"}
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: password_confirmation):
+  
+app/controllers/users_controller.rb:36:in `password_confirmation'
+app/controllers/users_controller.rb:10:in `create'
+Started GET "/" for ::1 at 2021-06-30 18:03:26 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 61ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 18:03:27 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 18:03:28 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"TGvK6Zq/cGvYESm/D4XmbYt/1doL84TTbgFCRDxIUu8MShoDgs5GBMSKdCdmTiYLW8igkee83vPS7ji/90mnGA==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}, "password_confirmation"=>"[FILTERED]"}
+Completed 400 Bad Request in 48812ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: password_confirmation):
+  
+app/controllers/users_controller.rb:36:in `password_confirmation'
+app/controllers/users_controller.rb:10:in `create'
+Started GET "/" for ::1 at 2021-06-30 18:04:20 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 18:04:22 -0700
+  
+SyntaxError (/home/jhnegbrt/appacademy/unote/app/controllers/users_controller.rb:39: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:39: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/users/new" for ::1 at 2021-06-30 18:04:24 -0700
+  
+SyntaxError (/home/jhnegbrt/appacademy/unote/app/controllers/users_controller.rb:39: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:39: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for ::1 at 2021-06-30 18:04:42 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 51ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 18:04:43 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 52ms (Views: 29.0ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 18:04:55 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"b+uBOM3USw8GaAu3d/2mfzQPOIW5IY0U4t2YVAyHaXgvylHS1aV9YBrzVi8eNmYZ5LhNzlVu1zReMuKvx4acjw==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}, "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (2.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fDs_Zt7hacsMAiMWKoJV6g"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12
+Completed 422 Unprocessable Entity in 80460ms (ActiveRecord: 6.0ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Username can't be blank):
+  
+app/controllers/users_controller.rb:12:in `create'
+Started GET "/" for ::1 at 2021-06-30 18:06:22 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 38ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 18:06:23 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 48ms (Views: 18.9ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 18:06:34 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"wxvSPTVh4dIkbz2GmfRO5hB/fWnMyuY0OZsM1X5JHCaDOgLXLRDXvTj0YB7wP46AwMgIIiCFvBSFdHYutUjp0Q==", "user"=>{"username"=>"jack22", "password"=>"[FILTERED]"}, "password_confirmation"=>"[FILTERED]"}
+Completed 400 Bad Request in 77619ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: password):
+  
+app/controllers/users_controller.rb:36:in `password_confirmation'
+app/controllers/users_controller.rb:10:in `create'
+Started GET "/" for ::1 at 2021-06-30 18:07:55 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 18:07:57 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 18:08:01 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"j7RhoOVEWIMumtl01Zg/0tCXf/VALRYnWiUhyGKg5QTPlbFK/TVu7DIBhOy8U/+0ACAKvqxiTAfmylszqaEQ8w==", "user"=>{"username"=>"jack22", "password"=>"[FILTERED]"}, "password"=>"[FILTERED]"}
+Started GET "/" for ::1 at 2021-06-30 18:11:01 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (0.4ms)
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 180200ms (ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 18:11:04 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 27ms (Views: 14.0ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 18:11:17 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"kSFRMtR1/KXn3U+YXcr1WwOgdnuMqlyV0WEZCRnW4DfRAIHYzATKyvtGEgA0ATU90xcDMGDlBrVtjmPy0tcVwA==", "user"=>{"username"=>"jack22", "password"=>"[FILTERED]"}, "password"=>"[FILTERED]"}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 64532ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-30 18:12:30 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 18:12:32 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 14.8ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 18:12:41 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"eYOa04R+j5cBFjB45zdx73LAGxtWFWXSIjgjXD346JQ5oko5nA+5+B2NbeCO/LGJonduULpaP/Ke11mn9vkdYw==", "user"=>{"username"=>"jack22", "password"=>"[FILTERED]"}, "password"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jack22"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "v7pTliOtavvxOI5E4vHTQw"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "jack22"], ["password_digest", "$2a$12$N0VGWL2ETlbrMVBBbX9hg.MibFuGQINTsmWTVt5tGZ70DTesGI1/K"], ["session_token", "v7pTliOtavvxOI5E4vHTQw"], ["created_at", "2021-07-01 01:12:56.014330"], ["updated_at", "2021-07-01 01:12:56.014330"]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "jack22"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "3lhQGoy7-LqvTTmZTs0W3A"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "3lhQGoy7-LqvTTmZTs0W3A"], ["updated_at", "2021-07-01 01:12:56.022940"], ["id", 6]]
+  ↳ app/models/user.rb:32
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3lhQGoy7-LqvTTmZTs0W3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 14726ms (Views: 33.1ms | ActiveRecord: 6.3ms)
+
+
+Started DELETE "/session" for ::1 at 2021-06-30 18:13:00 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iz4RvG2F4vepeAo/Kmx7basCjiimYKmUPxoGz9YPBu3LH8FWdfTUmLXjV6dDp7sLe7X7Y0ov87SD9Xw0HQ7zGg=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3lhQGoy7-LqvTTmZTs0W3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "jack22"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "paIOykzx6yFax0FMbLGRBQ"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "paIOykzx6yFax0FMbLGRBQ"], ["updated_at", "2021-07-01 01:13:01.014803"], ["id", 6]]
+  ↳ app/models/user.rb:32
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 39ms (Views: 25.8ms | ActiveRecord: 3.1ms)
+
+
