@@ -7,8 +7,8 @@ class UsersController < ApplicationController
 
   def create
     debugger
+    @user = User.new(user_params)
     if password_confirmation[:password_confirmation] == user_params[:password]
-      @user = User.new(user_params)
       if @user.save
         login!(@user)
         render :show
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
       end
     else
       flash.now[:errors] = ["Passwords must match"]
+      render :new
     end
 
 

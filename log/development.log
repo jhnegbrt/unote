@@ -3280,3 +3280,106 @@ Processing by UsersController#create as HTML
 Completed 200 OK in 3588ms (Views: 63.4ms | ActiveRecord: 3.8ms)
 
 
+Started POST "/users" for ::1 at 2021-06-30 21:30:04 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Fa9rwQU1hkDgRjqGCLxbk2/FvoKFkpe2GFJ0jcD/6pmvJvFXv5TbPNql5WImFFw6ji+Hdh5QEH6zrXaIzRmUoA==", "user"=>{"username"=>"john22", "password"=>"[FILTERED]"}, "password"=>"[FILTERED]"}
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "john22"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zyjXWvXy-MK_b5eBljWnGw"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (3.1ms)
+  Rendered users/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 7233ms (Views: 49.9ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 21:30:20 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"coTr9LzEDcpHiTBIc14EX6mDg8h0HLHXbRqbg4ofGqzIDXFiBmVQtn1q76xd9gP2SGm6PO/eNh/G5ZmGh/lklQ==", "user"=>{"username"=>"john22", "password"=>"[FILTERED]"}, "password"=>"[FILTERED]"}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 3335ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 21:31:11 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"coTr9LzEDcpHiTBIc14EX6mDg8h0HLHXbRqbg4ofGqzIDXFiBmVQtn1q76xd9gP2SGm6PO/eNh/G5ZmGh/lklQ==", "user"=>{"username"=>"john22", "password"=>"[FILTERED]"}, "password"=>"[FILTERED]"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 2767ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    1: <form action="<%=users_url%>" method="POST">
+    2:   <%= authenticity_helper %>
+    3:   <label for="username">Username:</label>
+    4:   <input name="user[username]" type="text" value="<%=@user.username%>">
+    5:   <br>
+    6:   <label for="password">Password:</label>
+    7:   <input name="user[password]" type="password" value="">
+  
+app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb___3739824508062886544_70096223716140'
+app/controllers/users_controller.rb:21:in `create'
+Started GET "/" for ::1 at 2021-06-30 21:31:27 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 67ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 21:31:29 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 70ms (Views: 38.5ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 21:31:38 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"59UM+wOEPE5ji6mWkUrRt35iUpkNuq8DOVq9mW+1fGxdXJZtuSVhMllodnK/4tYen4hrbZZ4KMuSpb+cYlMCVQ==", "user"=>{"username"=>"jackkkk", "password"=>"[FILTERED]"}, "password"=>"[FILTERED]"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 2899ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    1: <form action="<%=users_url%>" method="POST">
+    2:   <%= authenticity_helper %>
+    3:   <label for="username">Username:</label>
+    4:   <input name="user[username]" type="text" value="<%=@user.username%>">
+    5:   <br>
+    6:   <label for="password">Password:</label>
+    7:   <input name="user[password]" type="password" value="">
+  
+app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb___3739824508062886544_70096218436480'
+app/controllers/users_controller.rb:21:in `create'
+Started GET "/" for ::1 at 2021-06-30 21:32:56 -0700
+Processing by NotesController#index as HTML
+  Rendering notes/index.html.erb within layouts/application
+  Rendered notes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 50ms (Views: 42.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-06-30 21:32:57 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 80ms (Views: 48.1ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/users" for ::1 at 2021-06-30 21:33:03 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"7Vbbo5W0Jcu2pznjOaRCGrM9IumfYBMHekgyZTFw08NX30E1LxV4t4xE5gcXDEWzUtcbHQSilM/RtzBgPJat+g==", "user"=>{"username"=>"jackkkk", "password"=>"[FILTERED]"}, "password"=>"[FILTERED]"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (3.0ms)
+  Rendered users/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 3351ms (Views: 95.2ms | ActiveRecord: 0.0ms)
+
+
