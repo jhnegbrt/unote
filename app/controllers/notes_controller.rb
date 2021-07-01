@@ -4,6 +4,11 @@ class NotesController < ApplicationController
     @notes = Note.all
   end
 
+  def new
+    @note = Note.new
+    render :new
+  end
+
   def show
   end
 end

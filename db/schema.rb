@@ -10,23 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_29_210704) do
+ActiveRecord::Schema.define(version: 2021_07_01_182759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "note_associations", force: :cascade do |t|
+    t.integer "note_1_id", null: false
+    t.integer "note_2_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "notes", force: :cascade do |t|
     t.text "body", null: false
     t.string "author_id", null: false
-  end
-
-  create_table "parent_children", force: :cascade do |t|
-    t.integer "parent_note_id", null: false
-    t.integer "child_note_id", null: false
-  end
-
-  create_table "siblings", force: :cascade do |t|
-    t.integer "sibling_1_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

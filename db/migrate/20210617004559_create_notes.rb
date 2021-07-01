@@ -3,6 +3,8 @@ class CreateNotes < ActiveRecord::Migration[5.2]
     create_table :notes do |t|
       t.text :body, null: false
       t.string :author_id, null: false
+
+      t.timestamps
     end
   end
 end
