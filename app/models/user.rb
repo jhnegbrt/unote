@@ -11,9 +11,8 @@ class User < ApplicationRecord
 
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
-    if @user.nil || @user.is_password(password) == false
-      #error handling in here
-      
+    if @user.nil? || @user.check_password(password) == false
+      return nil
     else
       @user
     end
@@ -25,7 +24,7 @@ class User < ApplicationRecord
   end
 
   def check_password(password)
-    BCrypt::Password.new(password_digest).is_password(password)
+    BCrypt::Password.new(password_digest).is_password?(password)
   end
 
   def reset_session_token!
