@@ -20,9 +20,6 @@ class UsersController < ApplicationController
       flash.now[:errors] = ["Passwords must match"]
       render :new
     end
-
-
-    
   end
 
   def show
@@ -31,7 +28,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :email)
   end
 
   def password_confirmation
