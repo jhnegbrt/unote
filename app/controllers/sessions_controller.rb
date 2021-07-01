@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       render :new
     else
       login!(@user)
-      redirect_to user_url(@user.id)
+      redirect_to user_url(@user)
     end
   end
 
