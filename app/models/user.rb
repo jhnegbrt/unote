@@ -39,8 +39,4 @@ class User < ApplicationRecord
     self.session_token ||= SecureRandom.urlsafe_base64
   end
 
-  # def check_valid_email
-  #   self.
-  # end
-
 end
