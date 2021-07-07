@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
   def create
     params = user_params.select {|k, v| v != ""}
-    debugger
     @user = User.new(params)
     if password_confirmation[:password_confirmation] == user_params[:password]
       if @user.save

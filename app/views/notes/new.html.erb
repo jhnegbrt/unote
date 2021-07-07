@@ -1,9 +1,14 @@
 <h3>Create a new Note!</h3>
 
-<form action="<%=user_notes_url(current_user)%>method="POST">
+<form action="<%=user_notes_url(current_user)%>" method="POST">
+  <%= authenticity_helper %>
+  <label>New Note!</label>
+  <br>
+  <input type="text" placeholder="Title (optional)">
+  <br>
   <label for="note_content">Content:</label>
   <br>
-  <textarea id="note_content" name="note[content]" rows="4" cols="50"></textarea>
+  <textarea placeholder="Create a new note!" id="note_content" name="note[body]" rows="4" cols="50"></textarea>
   <br>
   <input type = "submit" value="Create Note!">
 </form>

@@ -13,7 +13,7 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.author_id = current_user.id
     if @note.save
-      redirect_to user_note_url(@note)
+      redirect_to user_notes_url(@note)
     else
       flash.now[:errors] = "Note could not be saved!"
       render :new
@@ -26,6 +26,6 @@ class NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:content)
+    params.require(:note).permit(:body, :title)
   end
 end
