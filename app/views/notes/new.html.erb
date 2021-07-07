@@ -4,11 +4,11 @@
   <%= authenticity_helper %>
   <label>New Note!</label>
   <br>
-  <input type="text" placeholder="Title (optional)">
+  <input type="text" name="note[title]" id="note_title" placeholder="Title (optional)">
   <br>
-  <label for="note_content">Content:</label>
+  <label for="note_body">Content:</label>
   <br>
-  <textarea placeholder="Create a new note!" id="note_content" name="note[body]" rows="4" cols="50"></textarea>
+  <textarea placeholder="Create a new note!" id="note_body" name="note[body]" rows="4" cols="50"></textarea>
   <br>
   <input type = "submit" value="Create Note!">
 </form>
