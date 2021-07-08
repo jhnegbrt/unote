@@ -13,6 +13,8 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.author_id = current_user.id
     if @note.save
+      debugger
+      @note.note_associations(@note.id)
       redirect_to user_notes_url(current_user)
     else
       flash.now[:errors] = "Note could not be saved!"

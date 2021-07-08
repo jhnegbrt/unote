@@ -1,0 +1,3 @@
+class NoteAssociation < ApplicationRecord
+
+end

@@ -6618,3 +6618,85 @@ Processing by NotesController#index as HTML
 Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/users/3/notes/new" for ::1 at 2021-07-07 18:15:06 -0700
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"3"}
+  Rendering notes/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C1j4ENIdMT1w8LR81oSQ2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered notes/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 42ms (Views: 23.1ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/users/3/notes" for ::1 at 2021-07-07 18:15:14 -0700
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"5Y4KTdu5IoW7psQO/Wo7bZAqdjpcWnsiAT6YkK1pmWA6GYtnv/5r8w2z4u0wjm1TliZr4GXTnESRXC+Jmwg6rw==", "note"=>{"title"=>"8th note", "body"=>"hello!"}, "user_id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C1j4ENIdMT1w8LR81oSQ2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:15
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO "notes" ("body", "author_id", "created_at", "updated_at", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "hello!"], ["author_id", "3"], ["created_at", "2021-07-08 01:15:14.079706"], ["updated_at", "2021-07-08 01:15:14.079706"], ["title", "8th note"]]
+  ↳ app/controllers/notes_controller.rb:15
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:15
+Completed 500 Internal Server Error in 115900ms (ActiveRecord: 4.2ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/note.rb:7:in `note_associations'
+app/controllers/notes_controller.rb:17:in `create'
+Started GET "/users/3/notes/new" for ::1 at 2021-07-07 18:17:18 -0700
+Processing by NotesController#new as HTML
+  Parameters: {"user_id"=>"3"}
+  Rendering notes/new.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C1j4ENIdMT1w8LR81oSQ2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered notes/new.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 61ms (Views: 38.7ms | ActiveRecord: 13.3ms)
+
+
+Started POST "/users/3/notes" for ::1 at 2021-07-07 18:17:25 -0700
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"Y+pLffWOI3of/ezoFfRzsCi26yRAIrRKR58N3XWOyfu8fcpXkclqDKnoygvYECWOLrr2/nmrUyzX/brEQ+9qNA==", "note"=>{"title"=>"9th note", "body"=>"new note"}, "user_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C1j4ENIdMT1w8LR81oSQ2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:15
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO "notes" ("body", "author_id", "created_at", "updated_at", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "new note"], ["author_id", "3"], ["created_at", "2021-07-08 01:17:25.307989"], ["updated_at", "2021-07-08 01:17:25.307989"], ["title", "9th note"]]
+  ↳ app/controllers/notes_controller.rb:15
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:15
+Completed 500 Internal Server Error in 107893ms (ActiveRecord: 5.5ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/note.rb:7:in `note_associations'
+app/models/note.rb:8:in `note_associations'
+app/controllers/notes_controller.rb:17:in `create'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" ORDER BY "notes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" ORDER BY "notes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNote Load (0.9ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" ORDER BY "notes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNote Load (0.5ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" ORDER BY "notes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (id = 1)[0m
+Started GET "/" for ::1 at 2021-07-08 15:53:40 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jhnegbrt/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C1j4ENIdMT1w8LR81oSQ2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Completed 200 OK in 155ms (Views: 147.5ms | ActiveRecord: 3.9ms)
+
+
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNoteAssociation Create (3.7ms)[0m  [1m[32mINSERT INTO "note_associations" ("note_1_id", "note_2_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["note_1_id", 1], ["note_2_id", 2], ["created_at", "2021-07-08 22:55:37.308295"], ["updated_at", "2021-07-08 22:55:37.308295"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNoteAssociation Load (0.5ms)[0m  [1m[34mSELECT "note_associations".* FROM "note_associations"[0m
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" ORDER BY "notes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNoteAssociation Load (0.4ms)[0m  [1m[34mSELECT "note_associations".* FROM "note_associations" WHERE (note_1_id = 1 OR note_2_id = 1)[0m
