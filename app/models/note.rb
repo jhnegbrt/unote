@@ -6,7 +6,7 @@ class Note < ApplicationRecord
 
   def note_associations
     debugger
-    NoteAssociations.where("note_1_id = ? OR note_2_id = ?", id, id)
+    @notes = NoteAssociations.where("note_1_id = ? OR note_2_id = ?", id, id)
   end
   
 end

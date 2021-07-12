@@ -6725,3 +6725,113 @@ Migrating to AddIndexToNoteAssociations (20210708225901)
   ↳ bin/rails:9
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNoteAssociation Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "note_associations" WHERE "note_associations"."note_1_id" = $1 AND "note_associations"."note_2_id" = $2 LIMIT $3[0m  [["note_1_id", 1], ["note_2_id", 2], ["LIMIT", 1]]
+  [1m[36mNoteAssociation Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "note_associations" WHERE "note_associations"."note_2_id" = $1 AND "note_associations"."note_1_id" = $2 LIMIT $3[0m  [["note_2_id", 2], ["note_1_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNoteAssociation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "note_associations" WHERE "note_associations"."note_1_id" = $1 AND "note_associations"."note_2_id" = $2 LIMIT $3[0m  [["note_1_id", 2], ["note_2_id", 1], ["LIMIT", 1]]
+  [1m[36mNoteAssociation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "note_associations" WHERE "note_associations"."note_2_id" = $1 AND "note_associations"."note_1_id" = $2 LIMIT $3[0m  [["note_2_id", 1], ["note_1_id", 2], ["LIMIT", 1]]
+  [1m[36mNoteAssociation Create (0.3ms)[0m  [1m[32mINSERT INTO "note_associations" ("note_1_id", "note_2_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["note_1_id", 2], ["note_2_id", 1], ["created_at", "2021-07-08 23:24:15.500590"], ["updated_at", "2021-07-08 23:24:15.500590"]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNoteAssociation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "note_associations" WHERE "note_associations"."note_1_id" = $1 AND "note_associations"."note_2_id" = $2 LIMIT $3[0m  [["note_1_id", 2], ["note_2_id", 1], ["LIMIT", 1]]
+  [1m[36mNoteAssociation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "note_associations" WHERE "note_associations"."note_2_id" = $1 AND "note_associations"."note_1_id" = $2 LIMIT $3[0m  [["note_2_id", 1], ["note_1_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNoteAssociation Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "note_associations" WHERE "note_associations"."note_1_id" = $1 AND "note_associations"."note_2_id" = $2 LIMIT $3[0m  [["note_1_id", 3], ["note_2_id", 1], ["LIMIT", 1]]
+  [1m[36mNoteAssociation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "note_associations" WHERE "note_associations"."note_2_id" = $1 AND "note_associations"."note_1_id" = $2 LIMIT $3[0m  [["note_2_id", 1], ["note_1_id", 3], ["LIMIT", 1]]
+  [1m[36mNoteAssociation Create (0.3ms)[0m  [1m[32mINSERT INTO "note_associations" ("note_1_id", "note_2_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["note_1_id", 3], ["note_2_id", 1], ["created_at", "2021-07-08 23:34:57.551728"], ["updated_at", "2021-07-08 23:34:57.551728"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNoteAssociation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "note_associations" WHERE "note_associations"."note_1_id" = $1 AND "note_associations"."note_2_id" = $2 LIMIT $3[0m  [["note_1_id", 1], ["note_2_id", 3], ["LIMIT", 1]]
+  [1m[36mNoteAssociation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "note_associations" WHERE "note_associations"."note_2_id" = $1 AND "note_associations"."note_1_id" = $2 LIMIT $3[0m  [["note_2_id", 3], ["note_1_id", 1], ["LIMIT", 1]]
+  [1m[36mNoteAssociation Create (0.3ms)[0m  [1m[32mINSERT INTO "note_associations" ("note_1_id", "note_2_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["note_1_id", 1], ["note_2_id", 3], ["created_at", "2021-07-08 23:35:16.138175"], ["updated_at", "2021-07-08 23:35:16.138175"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (112.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "unote_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (105.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "unote_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (340.6ms)[0m  [1m[35mCREATE DATABASE "unote_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (263.8ms)[0m  [1m[35mCREATE DATABASE "unote_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2863930903847733720)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateNotes (20210617004559)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "notes" ("id" bigserial primary key, "body" text NOT NULL, "author_id" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210617004559_create_notes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210617004559"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20210629210227)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying, "password_digest" character varying NOT NULL, "session_token" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210629210227_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210629210227"]]
+  ↳ bin/rails:9
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateNoteAssociations (20210701182759)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "note_associations" ("id" bigserial primary key, "note_1_id" integer NOT NULL, "note_2_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210701182759_create_note_associations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210701182759"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddTitleToNotes (20210701205657)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "notes" ADD "title" character varying[0m
+  ↳ db/migrate/20210701205657_add_title_to_notes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210701205657"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddIndexToNoteAssociations (20210708225901)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_note_associations_on_note_1_id_and_note_2_id" ON "note_associations"  ("note_1_id", "note_2_id")[0m
+  ↳ db/migrate/20210708225901_add_index_to_note_associations.rb:3
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_note_associations_on_note_2_id_and_note_1_id" ON "note_associations"  ("note_2_id", "note_1_id")[0m
+  ↳ db/migrate/20210708225901_add_index_to_note_associations.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210708225901"]]
+  ↳ bin/rails:9
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-07-12 19:08:57.157519"], ["updated_at", "2021-07-12 19:08:57.157519"]]
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2863930903847733720)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
